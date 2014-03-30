@@ -119,23 +119,23 @@ describe 'dog owner registration' do
 
     end
 
-    describe 'dog owner get error because he is trying to spam you with evil Faizaan magic' do
+    describe 'dog owner gets error because he is trying to spam you with evil Faizaan magic' do
 
       it 'throws an error when email is invalid' do
-        fill_in "dog[email]", with: ""
+        fill_in "dog[email]", with: "afasfs"
         fill_in "dog[dog_name]", with: "unixdasuperiortolinux"
         fill_in "dog[first_name]", with: 'Ali'
         fill_in "dog[last_name]", with: 'gberg'
 
         click_on "Who Who Who?"
 
-        expect(page).to have_content("can't be blank")
+        expect(page).to have_content("invalid")
 
       end
 
       it 'throws an error when dog name is invalid' do
         fill_in "dog[email]", with: "indahouse@gmail.com"
-        fill_in "dog[dog_name]", with: ""
+        fill_in "dog[dog_name]", with: "123"
         fill_in "dog[first_name]", with: 'Ali'
         fill_in "dog[last_name]", with: 'gberg'
 
@@ -148,7 +148,7 @@ describe 'dog owner registration' do
       it 'throws an error when first name is invalid' do
         fill_in "dog[email]", with: "indahouse@gmail.com"
         fill_in "dog[dog_name]", with: "unixdasuperiortolinux"
-        fill_in "dog[first_name]", with: ''
+        fill_in "dog[first_name]", with: '123'
         fill_in "dog[last_name]", with: 'gberg'
 
         click_on "Who Who Who?"
@@ -161,7 +161,7 @@ describe 'dog owner registration' do
         fill_in "dog[email]", with: "indahouse@gmail.com"
         fill_in "dog[dog_name]", with: "unixdasuperiortolinux"
         fill_in "dog[first_name]", with: 'Ali'
-        fill_in "dog[last_name]", with: ''
+        fill_in "dog[last_name]", with: '123'
 
         click_on "Who Who Who?"
 
