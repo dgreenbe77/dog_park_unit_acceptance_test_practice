@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to "More Dogz", new_dog_path %><br>
+
+<% @dogs.each do |dawg| %>
+  <%= dawg.first_name %>
+  <%= dawg.last_name %>
+  <%= dawg.full_name %>
+  <%= dawg.email %>
+  <%= dawg.dog_name %>
+  <br>
+<% end %>

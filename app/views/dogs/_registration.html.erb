@@ -1,0 +1,21 @@
+<%= form_for(@dog) do |d| %>
+
+  <% @dog.errors.full_messages.each do |er| %>
+    <%= er %>
+  <% end %>
+
+  <%= d.label "First name:" %>
+  <%= d.text_field :first_name %>
+
+  <%= d.label "Last name:" %>
+  <%= d.text_field :last_name %>
+
+  <%= d.label "Email:" %>
+  <%= d.text_field :email %>
+
+  <%= d.label "Dog name:" %>
+  <%= d.text_field :dog_name %>
+
+  <%= d.submit "Who Who Who?" %>
+
+<% end %>
